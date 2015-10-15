@@ -14,7 +14,7 @@
 {
     if (_headImage == nil) {
         
-        self.headImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.contentView.frame), CGRectGetWidth(self.headImage.frame))];
+        self.headImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.contentView.frame), CGRectGetWidth(self.contentView.frame))];
         
         [self.contentView addSubview:_headImage];
     }
@@ -26,7 +26,7 @@
 {
     if (_heartImage == nil) {
         
-        self.heartImage = [[UIImageView alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(self.headImage.frame), 20, 20)];
+        self.heartImage = [[UIImageView alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(self.headImage.frame) + 3, 20, 20)];
         
         [self.contentView addSubview:_heartImage];
     }

@@ -1,0 +1,23 @@
+//
+//  YJZBabyComming.pch
+//  BabyComing
+//
+//  Created by 袁新峰 on 15/10/15.
+//  Copyright © 2015年 YJZ. All rights reserved.
+//
+
+#ifndef YJZBabyComming_pch
+#define YJZBabyComming_pch
+
+#import "APPHeader.h"
+
+#import "IMPHeader.h"
+
+#import "KEYHeader.h"
+
+#import "URLHeader.h"
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* YJZBabyComming_pch */
