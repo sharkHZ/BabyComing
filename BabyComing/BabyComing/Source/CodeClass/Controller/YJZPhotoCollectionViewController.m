@@ -17,6 +17,8 @@
 
 @property(nonatomic, assign) BOOL update;
 
+@property (nonatomic, assign) NSInteger page;
+
 @end
 
 @implementation YJZPhotoCollectionViewController
@@ -30,6 +32,7 @@ static NSString * const reuseIdentifier = @"Cell";
     
     self.clearsSelectionOnViewWillAppear = NO;
     
+    self.page = 2;
     
     self.listArray = [NSMutableArray array];
     
@@ -64,7 +67,7 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)loadData
 {
     
-    NSString *allString = [NSString stringWithFormat:@"http://android.mengbaby.com/sgstar/list?lng=116.344263&mac=f4%3A8b%3A32%3A0b%3A8f%3Aa3&udid=867299021525431&lang=zh&v=3.0.0&urid=3079529&page=1&token=ML3KQe43SxWVbTSrUCmmLUjUu8PcviHYFxoR0dVd3Pw&connectnet=wifi&device=gucci&account=867299021525431&pushid=d//igwEhgBGCI2TG6lWqlDnQtmJT4rXqQP/rKi6+v/5h38BGUgjYLV39nJe0ssFUsv7c6lHO/keDzSk/q9qErDQYlEUah2umQNwP2pRNyjI=&lat=40.0309&dosv=19&ctid=1001&dist=8"];
+    NSString *allString = [NSString stringWithFormat:@"http://android.mengbaby.com/sgstar/list?lng=116.344263&mac=f4%%3A8b%%3A32%%3A0b%%3A8f%%3Aa3&udid=867299021525431&lang=zh&v=3.0.0&urid=3079529&page=1&token=ML3KQe43SxWVbTSrUCmmLUjUu8PcviHYFxoR0dVd3Pw&connectnet=wifi&device=gucci&account=867299021525431&pushid=d//igwEhgBGCI2TG6lWqlDnQtmJT4rXqQP/rKi6+v/5h38BGUgjYLV39nJe0ssFUsv7c6lHO/keDzSk/q9qErDQYlEUah2umQNwP2pRNyjI=&lat=40.0309&dosv=19&ctid=1001&dist=8"];
     
     [self loadDataForType:1 withURL:allString];
     
@@ -73,20 +76,22 @@ static NSString * const reuseIdentifier = @"Cell";
 //上拉
 - (void)loadMoreData
 {
-    NSInteger page = 1;
     
-    if (page < self.photoModel.pages) {
-        NSString *allString = [NSString stringWithFormat:@"http://android.mengbaby.com/sgstar/list?lng=116.344263&mac=f4%3A8b%3A32%3A0b%3A8f%3Aa3&udid=867299021525431&lang=zh&v=3.0.0&urid=3079529&page=%@&token=ML3KQe43SxWVbTSrUCmmLUjUu8PcviHYFxoR0dVd3Pw&connectnet=wifi&device=gucci&account=867299021525431&pushid=d//igwEhgBGCI2TG6lWqlDnQtmJT4rXqQP/rKi6+v/5h38BGUgjYLV39nJe0ssFUsv7c6lHO/keDzSk/q9qErDQYlEUah2umQNwP2pRNyjI=&lat=40.0309&dosv=19&ctid=1001&dist=8",page];
+    if (_page < 11) {
+        NSString *allString = [NSString stringWithFormat:@"http://android.mengbaby.com/sgstar/list?lng=116.344263&mac=f4%%3A8b%%3A32%%3A0b%%3A8f%%3Aa3&udid=867299021525431&lang=zh&v=3.0.0&urid=3079529&page=%ld&token=ML3KQe43SxWVbTSrUCmmLUjUu8PcviHYFxoR0dVd3Pw&connectnet=wifi&device=gucci&account=867299021525431&pushid=d//igwEhgBGCI2TG6lWqlDnQtmJT4rXqQP/rKi6+v/5h38BGUgjYLV39nJe0ssFUsv7c6lHO/keDzSk/q9qErDQYlEUah2umQNwP2pRNyjI=&lat=40.0309&dosv=19&ctid=1001&dist=8",_page];
+        
         
         [self loadDataForType:2 withURL:allString];
         
-        page ++;
+        
         
     }else
     {
         NSLog(@"没有跟多的数据了!");
+        [self.collectionView footerEndRefreshing];
+        
     }
-    
+    _page ++;
     
 }
 
@@ -153,14 +158,8 @@ static NSString * const reuseIdentifier = @"Cell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     YJZPhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
 
-    NSLog(@"1234567890-");
+
     self.photoModel = self.listArray[indexPath.row];
-    
-    NSLog(@"1234567890-11111111111111111111111");
-    
-    NSLog(@"%@", [self.photoModel class]);
-NSLog(@"%@",[self.photoModel class]);
-//    cell.headImage.backgroundColor = [UIColor redColor];
     
     [cell.headImage sd_setImageWithURL:[NSURL URLWithString:self.photoModel.img]];
     
