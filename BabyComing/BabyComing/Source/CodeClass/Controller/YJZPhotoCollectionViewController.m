@@ -7,8 +7,12 @@
 //
 
 #import "YJZPhotoCollectionViewController.h"
+
 #import "YJZPhotoCollectionViewCell.h"
+
 #import "YJZphotoModel.h"
+
+#import "YJZPhotoDetailController.h"
 @interface YJZPhotoCollectionViewController () <UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, strong) YJZphotoModel *photoModel;
@@ -80,7 +84,7 @@ static NSString * const reuseIdentifier = @"Cell";
     if (_page < 11) {
         NSString *allString = [NSString stringWithFormat:@"http://android.mengbaby.com/sgstar/list?lng=116.344263&mac=f4%%3A8b%%3A32%%3A0b%%3A8f%%3Aa3&udid=867299021525431&lang=zh&v=3.0.0&urid=3079529&page=%ld&token=ML3KQe43SxWVbTSrUCmmLUjUu8PcviHYFxoR0dVd3Pw&connectnet=wifi&device=gucci&account=867299021525431&pushid=d//igwEhgBGCI2TG6lWqlDnQtmJT4rXqQP/rKi6+v/5h38BGUgjYLV39nJe0ssFUsv7c6lHO/keDzSk/q9qErDQYlEUah2umQNwP2pRNyjI=&lat=40.0309&dosv=19&ctid=1001&dist=8",_page];
         
-        
+        _page ++;
         [self loadDataForType:2 withURL:allString];
         
         
@@ -91,7 +95,7 @@ static NSString * const reuseIdentifier = @"Cell";
         [self.collectionView footerEndRefreshing];
         
     }
-    _page ++;
+    
     
 }
 
@@ -102,7 +106,7 @@ static NSString * const reuseIdentifier = @"Cell";
     [[YJZNetWorkTools sharedNetworkTools] GET:allUrlstring parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         
 
-        NSLog(@"%@",allUrlstring);
+//        NSLog(@"%@",allUrlstring);
         
         NSMutableArray *temArray = [NSMutableArray arrayWithArray:responseObject[@"list"]];
         
@@ -159,20 +163,36 @@ static NSString * const reuseIdentifier = @"Cell";
     YJZPhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
 
 
-    self.photoModel = self.listArray[indexPath.row];
+    self.photoModel = self.listArray[indexPath.item];
+    
+    NSLog(@"hhhhhhhhhhhhhh%@",self.photoModel.sgid);
     
     [cell.headImage sd_setImageWithURL:[NSURL URLWithString:self.photoModel.img]];
     
     cell.heartImage.backgroundColor = [UIColor cyanColor];
     
     cell.countLabel.backgroundColor = [UIColor magentaColor];
+    
     cell.countLabel.text = self.photoModel.count;
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"123213");
+    YJZPhotoDetailController *photoDetailVC = [[YJZPhotoDetailController alloc] init];
+    
+//    photoDetailVC.photoModel = self.photoModel;
+    photoDetailVC.photoModel =  self.listArray[indexPath.item];
+    
+    NSLog(@"%ld", indexPath.item);
+    
+    NSLog(@"bbbbbbbbbbbbbb%@bbbbbbbbbbbbbbbb",photoDetailVC.photoModel.sgid);
+    
+    [self.navigationController setNavigationBarHidden:YES];
+    self.tabBarController.tabBar.hidden = YES;
+    
+    [self.navigationController pushViewController:photoDetailVC animated:YES];
+    
 }
 
 #pragma mark <UICollectionViewDelegate>

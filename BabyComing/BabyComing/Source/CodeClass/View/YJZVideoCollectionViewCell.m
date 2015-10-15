@@ -14,7 +14,7 @@
 {
     if (_headImage == nil) {
         
-        self.headImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.contentView.frame), CGRectGetWidth(self.headImage.frame))];
+        self.headImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.contentView.frame), CGRectGetWidth(self.contentView.frame))];
         
         [self.contentView addSubview:_headImage];
     }

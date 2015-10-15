@@ -63,6 +63,10 @@
 		AB2F67C51BCF680A0054A7D8 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2F67B61BCF680A0054A7D8 /* UIImageView+WebCache.m */; settings = {ASSET_TAGS = (); }; };
 		AB2F67C61BCF680A0054A7D8 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2F67B81BCF680A0054A7D8 /* UIView+WebCacheOperation.m */; settings = {ASSET_TAGS = (); }; };
 		AB2F67C91BCF6DD70054A7D8 /* YJZphotoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2F67C81BCF6DD70054A7D8 /* YJZphotoModel.m */; settings = {ASSET_TAGS = (); }; };
+		AB2F67CC1BCF93250054A7D8 /* YJZVideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2F67CB1BCF93250054A7D8 /* YJZVideoModel.m */; settings = {ASSET_TAGS = (); }; };
+		AB2F67D01BCF97840054A7D8 /* YJZPhotoDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2F67CF1BCF97840054A7D8 /* YJZPhotoDetailController.m */; settings = {ASSET_TAGS = (); }; };
+		AB2F67D41BCF9F800054A7D8 /* YJZPhotoDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2F67D31BCF9F800054A7D8 /* YJZPhotoDetailModel.m */; settings = {ASSET_TAGS = (); }; };
+		AB826CD81BCFDD3E005C27BC /* YJZVideoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB826CD71BCFDD3E005C27BC /* YJZVideoDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
 		C2B516971BCE4694006C6C5D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B516961BCE4694006C6C5D /* main.m */; };
 		C2B5169C1BCE4694006C6C5D /* BabyComing-Prefix.pch in Resources */ = {isa = PBXBuildFile; fileRef = C2B5169B1BCE4694006C6C5D /* BabyComing-Prefix.pch */; };
 		C2B5169E1BCE4694006C6C5D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2B5169D1BCE4694006C6C5D /* Images.xcassets */; };
@@ -195,6 +199,14 @@
 		AB2F67B81BCF680A0054A7D8 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		AB2F67C71BCF6DD70054A7D8 /* YJZphotoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJZphotoModel.h; sourceTree = "<group>"; };
 		AB2F67C81BCF6DD70054A7D8 /* YJZphotoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJZphotoModel.m; sourceTree = "<group>"; };
+		AB2F67CA1BCF93250054A7D8 /* YJZVideoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJZVideoModel.h; sourceTree = "<group>"; };
+		AB2F67CB1BCF93250054A7D8 /* YJZVideoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJZVideoModel.m; sourceTree = "<group>"; };
+		AB2F67CE1BCF97840054A7D8 /* YJZPhotoDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJZPhotoDetailController.h; sourceTree = "<group>"; };
+		AB2F67CF1BCF97840054A7D8 /* YJZPhotoDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJZPhotoDetailController.m; sourceTree = "<group>"; };
+		AB2F67D21BCF9F800054A7D8 /* YJZPhotoDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJZPhotoDetailModel.h; sourceTree = "<group>"; };
+		AB2F67D31BCF9F800054A7D8 /* YJZPhotoDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJZPhotoDetailModel.m; sourceTree = "<group>"; };
+		AB826CD61BCFDD3E005C27BC /* YJZVideoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJZVideoDetailViewController.h; sourceTree = "<group>"; };
+		AB826CD71BCFDD3E005C27BC /* YJZVideoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJZVideoDetailViewController.m; sourceTree = "<group>"; };
 		C2B516911BCE4693006C6C5D /* BabyComing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabyComing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2B516951BCE4693006C6C5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2B516961BCE4694006C6C5D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -400,6 +412,26 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
+		AB2F67CD1BCF974A0054A7D8 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				AB2F67CE1BCF97840054A7D8 /* YJZPhotoDetailController.h */,
+				AB2F67CF1BCF97840054A7D8 /* YJZPhotoDetailController.m */,
+				AB826CD61BCFDD3E005C27BC /* YJZVideoDetailViewController.h */,
+				AB826CD71BCFDD3E005C27BC /* YJZVideoDetailViewController.m */,
+			);
+			name = Detail;
+			sourceTree = "<group>";
+		};
+		AB2F67D11BCF9F390054A7D8 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				AB2F67D21BCF9F800054A7D8 /* YJZPhotoDetailModel.h */,
+				AB2F67D31BCF9F800054A7D8 /* YJZPhotoDetailModel.m */,
+			);
+			name = Detail;
+			sourceTree = "<group>";
+		};
 		C2B516881BCE4693006C6C5D = {
 			isa = PBXGroup;
 			children = (
@@ -517,8 +549,11 @@
 		C2B516DE1BCE49CA006C6C5D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AB2F67D11BCF9F390054A7D8 /* Detail */,
 				AB2F67C71BCF6DD70054A7D8 /* YJZphotoModel.h */,
 				AB2F67C81BCF6DD70054A7D8 /* YJZphotoModel.m */,
+				AB2F67CA1BCF93250054A7D8 /* YJZVideoModel.h */,
+				AB2F67CB1BCF93250054A7D8 /* YJZVideoModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -604,11 +639,12 @@
 			isa = PBXGroup;
 			children = (
 				C2B516D41BCE49CA006C6C5D /* YJZMainViewController.h */,
-				C2B516D51BCE49CA006C6C5D /* YJZMainViewController.m */,
 				C2B516D61BCE49CA006C6C5D /* YJZPhotoCollectionViewController.h */,
+				C2B516D51BCE49CA006C6C5D /* YJZMainViewController.m */,
 				C2B516D71BCE49CA006C6C5D /* YJZPhotoCollectionViewController.m */,
 				C2B516DC1BCE49CA006C6C5D /* YJZVideoCollectionViewController.h */,
 				C2B516DD1BCE49CA006C6C5D /* YJZVideoCollectionViewController.m */,
+				AB2F67CD1BCF974A0054A7D8 /* Detail */,
 			);
 			name = FirstController;
 			sourceTree = "<group>";
@@ -788,6 +824,8 @@
 				AB2F673D1BCF5E090054A7D8 /* AFURLConnectionOperation.m in Sources */,
 				AB2F67BB1BCF680A0054A7D8 /* SDWebImageCompat.m in Sources */,
 				AB2F67BF1BCF680A0054A7D8 /* SDWebImageManager.m in Sources */,
+				AB826CD81BCFDD3E005C27BC /* YJZVideoDetailViewController.m in Sources */,
+				AB2F67CC1BCF93250054A7D8 /* YJZVideoModel.m in Sources */,
 				AB2F67391BCF5E090054A7D8 /* AFHTTPRequestOperationManager.m in Sources */,
 				AB2F67C61BCF680A0054A7D8 /* UIView+WebCacheOperation.m in Sources */,
 				AB2F67BA1BCF680A0054A7D8 /* SDImageCache.m in Sources */,
@@ -806,10 +844,12 @@
 				AB2F67971BCF68020054A7D8 /* MJRefreshHeaderView.m in Sources */,
 				C2B516EC1BCE49CA006C6C5D /* AppDelegate.m in Sources */,
 				AB2F677A1BCF67F90054A7D8 /* MJExtensionConst.m in Sources */,
+				AB2F67D01BCF97840054A7D8 /* YJZPhotoDetailController.m in Sources */,
 				AB2F67671BCF67F00054A7D8 /* READEME.md in Sources */,
 				AB2F673C1BCF5E090054A7D8 /* AFSecurityPolicy.m in Sources */,
 				C2B516971BCE4694006C6C5D /* main.m in Sources */,
 				AB2F67C01BCF680A0054A7D8 /* SDWebImagePrefetcher.m in Sources */,
+				AB2F67D41BCF9F800054A7D8 /* YJZPhotoDetailModel.m in Sources */,
 				AB2F67811BCF67F90054A7D8 /* NSString+MJExtension.m in Sources */,
 				AB2F67951BCF68020054A7D8 /* MJRefreshConst.m in Sources */,
 				AB2F67C41BCF680A0054A7D8 /* UIImageView+HighlightedWebCache.m in Sources */,

@@ -18,6 +18,23 @@
 
 
 
+///三张图片的 cell 中 大图的的宽度
+#define imageWidth (CGRectGetWidth(self.contentView.frame) - 30) / 2
+
+//自定义 详细页面导航RGB
+
+#define  whiteSmokeRGB [UIColor colorWithRed:245/255.0 green:245/255.0 blue:245/255.0 alpha:1]
+// 自定义导航 按钮 颜色   冷灰  RGB: 128 138 135
+#define grayRGB [UIColor colorWithRed:128/255.0 green:138/255.0 blue:135/255.0 alpha:1]
+
+//自定义导航 按钮 颜色   白色  RGB: 255 255 255
+#define whiteRGB [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1]
+//主导航的颜色 品蓝 RGB: 65 105 225
+#define buleRGB [UIColor colorWithRed:65/255.0 green:105/255.0 blue:225/255.0 alpha:0.8]
+
+#define kBaseTag 1000
+
+// 这个是主体色   #4c7ef7  品蓝
 
 
 

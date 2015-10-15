@@ -43,14 +43,28 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - **** 为了实现隐藏导航时的一些bug 只能这么写 ****
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    
+    [self.selectedViewController beginAppearanceTransition: YES animated: animated];
 }
-*/
+
+-(void) viewDidAppear:(BOOL)animated
+{
+    [self.selectedViewController endAppearanceTransition];
+}
+
+-(void) viewWillDisappear:(BOOL)animated
+{
+    [self.selectedViewController beginAppearanceTransition: NO animated: animated];
+}
+
+-(void) viewDidDisappear:(BOOL)animated
+{
+    [self.selectedViewController endAppearanceTransition];
+}
+
 
 @end

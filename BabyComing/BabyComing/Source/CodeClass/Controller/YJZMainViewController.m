@@ -41,7 +41,7 @@
     self.videoVC.view.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame),CGRectGetHeight(self.view.frame));
     [self addChildViewController:_photoVC];
     [self addChildViewController:_videoVC];
-    [self.view addSubview:_videoVC.view];
+//    [self.view addSubview:_videoVC.view];
     [self.view addSubview:_photoVC.view];
 }
 - (void)rightBarButtonItemAction:(UIBarButtonItem *)sender{
@@ -53,19 +53,6 @@
         self.flags = YES;
     }
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
