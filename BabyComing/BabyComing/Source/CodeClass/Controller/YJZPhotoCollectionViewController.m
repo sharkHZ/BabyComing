@@ -8,7 +8,7 @@
 
 #import "YJZPhotoCollectionViewController.h"
 #import "YJZPhotoCollectionViewCell.h"
-@interface YJZPhotoCollectionViewController ()
+@interface YJZPhotoCollectionViewController () <UICollectionViewDelegateFlowLayout>
 
 @end
 
@@ -19,29 +19,29 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = NO;
+    self.collectionView.backgroundColor = [UIColor whiteColor];
     
-    // Register cell classes
+    self.clearsSelectionOnViewWillAppear = NO;
+    
     [self.collectionView registerClass:[YJZPhotoCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
 
 
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark <UICollectionViewDelegateFlowLayout>
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake(CGRectGetWidth(self.view.frame) / 3 - 25, CGRectGetHeight(self.view.frame) / 3 - 6);
+    
+    //    return CGSizeMake(80, 140);
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    return UIEdgeInsetsMake(25, 20, 15, 20);
 }
-*/
+
 
 #pragma mark <UICollectionViewDataSource>
 

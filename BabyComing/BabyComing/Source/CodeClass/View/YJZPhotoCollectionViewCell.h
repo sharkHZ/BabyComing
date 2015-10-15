@@ -10,4 +10,10 @@
 
 @interface YJZPhotoCollectionViewCell : UICollectionViewCell
 
+@property (nonatomic, strong) UIImageView *headImage;
+
+@property (nonatomic, strong) UIImageView *heartImage;
+
+@property (nonatomic, strong) UILabel *countLabel;
+
 @end
